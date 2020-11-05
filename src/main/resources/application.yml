@@ -1,0 +1,20 @@
+#======================
+# Logback configuration
+#======================
+logging:
+  pattern:
+    console: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    root: WARN
+    com.hazelcast: DEBUG
+    cz.simkovicp: DEBUG
+
+hazelcast:
+  server:
+    addresses: <address>
+  group:
+    name: <name>
+    password: <password>
+  client:
+    instance:
+      name: remote-viewer
