@@ -59,8 +59,10 @@ public class HazelcastConfiguration {
         HazelcastInstance instance = HazelcastClient.newHazelcastClient(clientConfig);
         
         instance.getDistributedObjects().stream().forEach(d -> {
+            
             logger.info("distributed object, name: {}, serviceName: {}, partitionKey: {}, {}", 
                     d.getName(), d.getServiceName(), d.getPartitionKey(), d.toString());
+            
             if (d instanceof ITopic) {
                 instance.getTopic(d.getName()).addMessageListener(
                         m -> {logger.info("topic {} received msg {}, member: {}, content: {}", 
