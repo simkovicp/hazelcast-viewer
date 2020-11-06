@@ -78,7 +78,6 @@ public class HazelcastMapController extends AbstractHazelcastController {
                 }
             }
         }
-        
         return map;
     }
     
